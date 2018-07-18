@@ -9,9 +9,9 @@
 import UIKit
 
 class Image {
-    var link: String
+    var link: String?
     
     init(link: String) {
-        self.link = link
+        self.link = link ?? "No link"
     }
 }

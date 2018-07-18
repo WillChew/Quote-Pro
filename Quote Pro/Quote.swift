@@ -9,11 +9,11 @@
 import UIKit
 
 class Quote {
-    var quote: String
+    var quote: String?
     var author: String?
     
     init(quote: String, author: String?) {
-        self.quote = quote
+        self.quote = quote ?? "No Quote"
         self.author = author ?? "No author"
     }
 }

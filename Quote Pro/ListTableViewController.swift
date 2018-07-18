@@ -8,10 +8,15 @@
 
 import UIKit
 
+
+
 class ListTableViewController: UITableViewController {
 
+    var savedQuotes = [SavedQuote]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,23 +34,48 @@ class ListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return savedQuotes.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomTableViewCell
+        cell.quoteLabel.text = savedQuotes[indexPath.row].quote.quote
+        cell.authorLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        cell.authorLabel.text = savedQuotes[indexPath.row].quote.author
+        
+        cell.randomImageView.image = UIImage(data: savedQuotes[indexPath.row].picture)
+        
         // Configure the cell...
 
         return cell
     }
-    */
+ 
+    
+    @IBAction func unwindToMainScreen(sender:UIStoryboardSegue) {
+        if sender.source is QuoteBuilderViewController {
+            if let senderVC = sender.source as? QuoteBuilderViewController{
+                guard let urlString = senderVC.image?.link else {
+                    return
+                }
+                guard let url = URL(string: urlString) else {
+                    return
+                }
+                let data = try? Data(contentsOf: url)
+
+                
+                
+                let newQuote = SavedQuote(quote: senderVC.quote!, picture: data!)
+                savedQuotes.append(newQuote)
+                tableView.reloadData()
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

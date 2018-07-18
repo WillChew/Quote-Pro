@@ -10,8 +10,8 @@ import UIKit
 
 class QuoteBuilderViewController: UIViewController {
     var requestManager: RequestManager!
-    var quote: Quote!
-    var image: Image!
+    var quote: Quote?
+    var image: Image?
     
     
     @IBOutlet weak var imageView: UIImageView!
@@ -53,13 +53,27 @@ class QuoteBuilderViewController: UIViewController {
             self.image = receivedImage
             
             DispatchQueue.main.async {
-                print(#line, self.image)
-                let url = URL(string: self.image.link)
-                let data = try? Data(contentsOf: url!)
+                
+                
+                guard let urlString = self.image?.link else {
+                    return
+                }
+                guard let url = URL(string: urlString) else {
+                    return
+                }
+                let data = try? Data(contentsOf: url)
                 self.imageView.image = UIImage(data: data!)
             }
         }
         
     }
+    
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "unwindToMainScreen", sender: self)
+        
+    }
+    
+    
     
 }
