@@ -8,7 +8,10 @@
 
 import UIKit
 
+
+
 class QuoteView: UIView {
+    
     @IBOutlet weak var quoteLabel: UILabel!
     
     @IBOutlet weak var authorLabel: UILabel!
@@ -20,5 +23,11 @@ class QuoteView: UIView {
         // Drawing code
     }
     */
+    
+    func setupWithQuote(_ quote: SavedQuote) {
+        quoteLabel.text = quote.quote.quote
+        authorLabel.text = quote.quote.author
+        randomImageView.image = UIImage(data: quote.picture)
+    }
 
 }
