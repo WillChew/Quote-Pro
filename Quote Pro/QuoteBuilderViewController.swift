@@ -57,11 +57,7 @@ class QuoteBuilderViewController: UIViewController {
                 let url = URL(string: self.image.link)
                 let data = try? Data(contentsOf: url!)
                 self.imageView.image = UIImage(data: data!)
-                
-                
             }
-            
-            
         }
         
     }
