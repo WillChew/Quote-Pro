@@ -16,6 +16,8 @@ class QuoteView: UIView {
     
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var randomImageView: UIImageView!
+    
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
