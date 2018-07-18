@@ -19,6 +19,7 @@
 		21ED3FE520FFD1DD00B9F654 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED3FE420FFD1DD00B9F654 /* CustomTableViewCell.swift */; };
 		21ED3FE720FFD7F600B9F654 /* SavedQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED3FE620FFD7F600B9F654 /* SavedQuote.swift */; };
 		21ED3FE920FFE46D00B9F654 /* QuoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21ED3FE820FFE46D00B9F654 /* QuoteView.xib */; };
+		21ED3FEB20FFE56900B9F654 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED3FEA20FFE56900B9F654 /* QuoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		21ED3FE420FFD1DD00B9F654 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		21ED3FE620FFD7F600B9F654 /* SavedQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedQuote.swift; sourceTree = "<group>"; };
 		21ED3FE820FFE46D00B9F654 /* QuoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteView.xib; sourceTree = "<group>"; };
+		21ED3FEA20FFE56900B9F654 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,6 @@
 			children = (
 				21ED3FCA20FF931100B9F654 /* AppDelegate.swift */,
 				21ED3FE220FFD1CB00B9F654 /* ListTableViewController.swift */,
-				21ED3FE820FFE46D00B9F654 /* QuoteView.xib */,
 				21ED3FCC20FF931100B9F654 /* QuoteBuilderViewController.swift */,
 				21ED3FDE20FF9A8900B9F654 /* RequestManager.swift */,
 				21ED3FE420FFD1DD00B9F654 /* CustomTableViewCell.swift */,
@@ -78,6 +79,8 @@
 				21ED3FE620FFD7F600B9F654 /* SavedQuote.swift */,
 				21ED3FDC20FF99C500B9F654 /* Quote.swift */,
 				21ED3FE020FFB09200B9F654 /* Image.swift */,
+				21ED3FE820FFE46D00B9F654 /* QuoteView.xib */,
+				21ED3FEA20FFE56900B9F654 /* QuoteView.swift */,
 				21ED3FD120FF931400B9F654 /* Assets.xcassets */,
 				21ED3FD320FF931400B9F654 /* LaunchScreen.storyboard */,
 				21ED3FD620FF931400B9F654 /* Info.plist */,
@@ -164,6 +167,7 @@
 				21ED3FE720FFD7F600B9F654 /* SavedQuote.swift in Sources */,
 				21ED3FE320FFD1CB00B9F654 /* ListTableViewController.swift in Sources */,
 				21ED3FDF20FF9A8900B9F654 /* RequestManager.swift in Sources */,
+				21ED3FEB20FFE56900B9F654 /* QuoteView.swift in Sources */,
 				21ED3FE120FFB09200B9F654 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

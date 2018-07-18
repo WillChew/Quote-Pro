@@ -9,15 +9,19 @@
 import UIKit
 
 
-
 class ListTableViewController: UITableViewController {
 
+    var quoteView: QuoteView!
     var savedQuotes = [SavedQuote]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        guard let quoteView = Bundle.main.loadNibNamed("QuoteView", owner: QuoteView.self)?.first as? QuoteView else {
+            return
+        }
+        
+        self.quoteView = quoteView
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
