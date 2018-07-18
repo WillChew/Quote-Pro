@@ -35,6 +35,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRx-f6-0JE">
                                         <rect key="frame" x="296" y="609" width="71" height="30"/>
                                         <state key="normal" title="Get Image"/>
+                                        <connections>
+                                            <action selector="getImageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AF6-S4-4eq"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ygz-L1-Yv7">
                                         <rect key="frame" x="121" y="278" width="133" height="91"/>
@@ -87,6 +90,7 @@
                     </view>
                     <connections>
                         <outlet property="authorLabel" destination="GLS-Aa-BHk" id="JFi-Ql-Cyz"/>
+                        <outlet property="imageView" destination="Sc5-ve-E4E" id="daI-RG-Q6r"/>
                         <outlet property="quoteLabel" destination="ygz-L1-Yv7" id="Jrr-TT-oRm"/>
                     </connections>
                 </viewController>

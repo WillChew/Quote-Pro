@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     var requestManager: RequestManager!
     var quote: Quote!
+    var image: Image!
 
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     override func viewDidLoad() {
@@ -40,12 +42,23 @@ class ViewController: UIViewController {
 
                 self.authorLabel.text = receivedQuote.author
             }
-           
         }
-
-        
-        
     }
     
-}
+    @IBAction func getImageButtonPressed(_ sender: UIButton) {
+        
+        requestManager.getImages { receivedImage in
+            self.image = receivedImage
+            
+            DispatchQueue.main.async {
+                print(#line, self.image)
+                let url = URL(string: self.image.link)
+                let data = try? Data(contentsOf: url!)
+                self.imageView.image = UIImage(data: data!)
+                
+                
+            }
+        }
+    }
 
+}
